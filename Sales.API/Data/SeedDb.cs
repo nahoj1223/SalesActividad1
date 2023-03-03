@@ -93,6 +93,11 @@ namespace Sales.API.Data
                 _context.Categories.Add(new Category { Name = "Hogar" });
                 _context.Categories.Add(new Category { Name = "Habitación" });
                 _context.Categories.Add(new Category { Name = "Tecnología" });
+                _context.Categories.Add(new Category { Name = "Electrodomesticos" });
+                _context.Categories.Add(new Category { Name = "Escuela" });
+                _context.Categories.Add(new Category { Name = "Musica" });
+                _context.Categories.Add(new Category { Name = "Herramientas" });
+                _context.Categories.Add(new Category { Name = "Baños" });
 
                 await _context.SaveChangesAsync();
             }
