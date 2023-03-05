@@ -87,16 +87,39 @@ namespace Sales.API.Data
         {
             if (!_context.Categories.Any())
             {
-                _context.Categories.Add(new Category { Name = "Ropa" });
-                _context.Categories.Add(new Category { Name = "Cocina" });
-                _context.Categories.Add(new Category { Name = "Hogar" });
-                _context.Categories.Add(new Category { Name = "Habitación" });
-                _context.Categories.Add(new Category { Name = "Tecnología" });
-                _context.Categories.Add(new Category { Name = "Electrodomesticos" });
-                _context.Categories.Add(new Category { Name = "Escuela" });
-                _context.Categories.Add(new Category { Name = "Musica" });
-                _context.Categories.Add(new Category { Name = "Herramientas" });
-                _context.Categories.Add(new Category { Name = "Baños" });
+                _context.Categories.Add(new Category { Name = "Electrónica" });
+                _context.Categories.Add(new Category { Name = "Informática" });
+                _context.Categories.Add(new Category { Name = "Hogar y Jardín" });
+                _context.Categories.Add(new Category { Name = "Moda y Accesorios" });
+                _context.Categories.Add(new Category { Name = "Salud y Belleza" });
+                _context.Categories.Add(new Category { Name = "Juguetes y Juegos" });
+                _context.Categories.Add(new Category { Name = "Deportes y Ocio" });
+                _context.Categories.Add(new Category { Name = "Instrumentos musicales" });
+                _context.Categories.Add(new Category { Name = "Automoción" });
+                _context.Categories.Add(new Category { Name = "Mascotas" });
+                _context.Categories.Add(new Category { Name = "Alimentación y Bebidas" });
+                _context.Categories.Add(new Category { Name = "Libros y Papelería" });
+                _context.Categories.Add(new Category { Name = "Arte y Manualidades" });
+                _context.Categories.Add(new Category { Name = "Joyería y Relojes" });
+                _context.Categories.Add(new Category { Name = "Viajes y Turismo" });
+                _context.Categories.Add(new Category { Name = "Muebles y Decoración" });
+                _context.Categories.Add(new Category { Name = "Electrodomésticos" });
+                _context.Categories.Add(new Category { Name = "Herramientas y Bricolaje" });
+                _context.Categories.Add(new Category { Name = "Cuidado del hogar" });
+                _context.Categories.Add(new Category { Name = "Tecnología portátil" });
+                _context.Categories.Add(new Category { Name = "Instrumentos de cocina" });
+                _context.Categories.Add(new Category { Name = "Maletas y Equipaje" });
+                _context.Categories.Add(new Category { Name = "Camping y senderismo" });
+                _context.Categories.Add(new Category { Name = "Cámaras y Fotografía" });
+                _context.Categories.Add(new Category { Name = "Artículos de oficina" });
+                _context.Categories.Add(new Category { Name = "Suministros de mascotas" });
+                _context.Categories.Add(new Category { Name = "Juguetes educativos y de aprendizaje" });
+                _context.Categories.Add(new Category { Name = "Maquillaje y cosméticos" });
+                _context.Categories.Add(new Category { Name = "Productos ecológicos y sostenibles" });
+                _context.Categories.Add(new Category { Name = "Productos para el cuidado del bebé" });
+                _context.Categories.Add(new Category { Name = "Artículos deportivos acuáticos" });
+                _context.Categories.Add(new Category { Name = "Regalos y ocasiones especiales" });
+                _context.Categories.Add(new Category { Name = "Videojuegos y consolas" });
 
                 await _context.SaveChangesAsync();
             }
