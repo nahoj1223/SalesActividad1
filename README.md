@@ -1,2 +1,2 @@
-# SalesActividad1
+# SalesActividades
 Entregable CRUD Categorias
