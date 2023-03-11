@@ -1,2 +1,2 @@
-# SalesActividad1
-Entregable CRUD Categorias
+# SalesActividades
+Entregables
