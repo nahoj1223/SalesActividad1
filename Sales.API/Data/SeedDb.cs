@@ -294,6 +294,6 @@ namespace Sales.API.Data
 
                 await _context.SaveChangesAsync();
             }
-        } 
+        }
     }
 }
