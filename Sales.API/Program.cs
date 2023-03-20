@@ -47,10 +47,11 @@ builder.Services.AddSwaggerGen(c =>
         });
 });
 
-
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=ConnectionDB"));
 builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped<IApiService, ApiService>();
+builder.Services.AddScoped<IUserHelper, UserHelper>();
+builder.Services.AddScoped<IFileStorage, FileStorage>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(x => x.TokenValidationParameters = new TokenValidationParameters
@@ -74,8 +75,6 @@ builder.Services.AddIdentity<User, IdentityRole>(x =>
 })
     .AddEntityFrameworkStores<DataContext>()
     .AddDefaultTokenProviders();
-
-builder.Services.AddScoped<IUserHelper, UserHelper>();
 
 var app = builder.Build();
 
