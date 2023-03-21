@@ -27,9 +27,10 @@ namespace Sales.API.Data
             await CheckCountriesAsync();
             await CheckCetegoriesAsync();
             await CheckRolesAsync();
-            await CheckUserAsync("1010", "Johan", "Usma", "jeur@yopmail.com", "320 982 4639", "Calle Luna Calle Sol", UserType.Admin);
+            await CheckUserAsync("1010", "Johan", "Usma", "jeur@yopmail.com", "3209824639", "Calle Luna Calle Sol", UserType.Admin);
 
         }
+
         private async Task CheckRolesAsync()
         {
             await _userHelper.CheckRoleAsync(UserType.Admin.ToString());
@@ -41,6 +42,12 @@ namespace Sales.API.Data
             var user = await _userHelper.GetUserAsync(email);
             if (user == null)
             {
+                var city = await _context.Cities.FirstOrDefaultAsync(x => x.Name == "Medellín");
+                if (city == null)
+                {
+                    city = await _context.Cities.FirstOrDefaultAsync();
+                }
+
                 user = new User
                 {
                     FirstName = firstName,
@@ -50,12 +57,16 @@ namespace Sales.API.Data
                     PhoneNumber = phone,
                     Address = address,
                     Document = document,
-                    City = _context.Cities.FirstOrDefault(),
+                    City = city,
                     UserType = userType,
                 };
 
                 await _userHelper.AddUserAsync(user, "123456");
                 await _userHelper.AddUserToRoleAsync(user, userType.ToString());
+
+                var token = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
+                await _userHelper.ConfirmEmailAsync(user, token);
+
             }
 
             return user;
