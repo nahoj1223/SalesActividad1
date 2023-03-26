@@ -37,10 +37,10 @@
         editContext = new(Category);
     }
 
-    private async Task OnBeforeInternalNavigation(LocationChangingContext conext)
+    private async Task OnBeforeInternalNavigation(LocationChangingContext context)
     {
-        var formWasModified = editContext.IsModified();
-        if (!formWasModified || FormPostedSuccessfully)
+        var formWasMofied = editContext.IsModified();
+        if (!formWasMofied || FormPostedSuccessfully)
         {
             return;
         }
@@ -61,6 +61,6 @@
             return;
         }
 
-        conext.PreventNavigation();
+        context.PreventNavigation();
     }
 }
