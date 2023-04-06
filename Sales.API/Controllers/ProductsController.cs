@@ -192,7 +192,7 @@ namespace Sales.API.Controllers
 
             for (int i = 0; i < imageDTO.Images.Count; i++)
             {
-                if (!imageDTO.Images[i].StartsWith("https://sales2023.blob.core.windows.net/products/"))
+                if (!imageDTO.Images[i].StartsWith("https://pruebastorageazure.blob.core.windows.net/products/"))
                 {
                     var photoProduct = Convert.FromBase64String(imageDTO.Images[i]);
                     imageDTO.Images[i] = await _fileStorage.SaveFileAsync(photoProduct, ".jpg", "products");
