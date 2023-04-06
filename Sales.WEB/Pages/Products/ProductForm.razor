@@ -8,7 +8,14 @@
     <div class="card">
         <div class="card-header">
             <span>
-                <i class="oi oi-star" /> Crear Nuevo Producto
+                @if (IsEdit)
+                {
+                    <i class="oi oi-star" /><label>Editar Producto</label>
+                }
+                else
+                {
+                    <i class="oi oi-star" /><label>Crear Nuevo Producto</label>
+                }
                 <a class="btn btn-sm btn-success float-end" href="/products"><i class="oi oi-arrow-thick-left" /> Regresar</a>
                 <button class="btn btn-sm btn-primary float-end mx-2" type="submit"><i class="oi oi-check" /> Guardar Cambios</button>
             </span>
@@ -68,10 +75,10 @@
     </div>
 </EditForm>
 
-@*@if (IsEdit && ProductDTO.ProductImages is not null)
+@if (IsEdit && ProductDTO.ProductImages is not null)
 {
     <CarouselView Images="ProductDTO.ProductImages" />
-}*@
+}
 
 @code {
     private EditContext editContext = null!;
