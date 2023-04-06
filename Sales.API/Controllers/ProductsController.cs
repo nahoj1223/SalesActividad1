@@ -100,7 +100,7 @@ namespace Sales.API.Controllers
                 foreach (var productCategoryId in productDTO.ProductCategoryIds!)
                 {
                     var category = await _context.Categories.FirstOrDefaultAsync(x => x.Id == productCategoryId);
-                    newProduct.ProductCategories.Add(new ProductCategory { Category = category!});
+                    newProduct.ProductCategories.Add(new ProductCategory { Category = category! });
                 }
 
                 _context.Add(newProduct);
