@@ -96,7 +96,7 @@ namespace Sales.API.Controllers
                 .ThenInclude(s => s.Country)
                 .Include(s => s.SaleDetails!)
                 .ThenInclude(sd => sd.Product)
-                .ThenInclude(p => p.ProductImages)
+                .ThenInclude(p => p!.ProductImages)
                 .FirstOrDefaultAsync(s => s.Id == id);
 
             if (sale == null)
